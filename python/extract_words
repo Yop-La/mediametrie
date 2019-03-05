@@ -1,0 +1,11 @@
+import collections
+def extract_words (n):
+    bag_of_words = df['mots'].tolist()
+    bag_of_words = [item for sublist in bag_of_words for item in sublist]
+    words_count =  collections.Counter(bag_of_words)
+    ll=collections.OrderedDict(words_count.most_common())
+    ll=dict(ll)
+    l=list(ll)
+    liste=l[:n]
+    dictio = {i:ll[i] for i in liste}
+    return(dictio)
